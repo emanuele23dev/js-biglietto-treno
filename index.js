@@ -19,6 +19,10 @@ let eta;
 // definizione prezzo biglietto in base ai km
 let price_km = 0.21;
 
+// creo la variabile message dove salvare il messaggio finale
+let messagge;
+
+
 // seconda fase : raccogliamo i dati
 // utilizzo un prompt per chiedere e salvare i km utente
 numero_km = prompt("Ciao, quanti km devi percorrere?");
@@ -26,3 +30,15 @@ numero_km = prompt("Ciao, quanti km devi percorrere?");
 eta = prompt("Ciao, quanti anni hai?");
 console.log(numero_km);
 console.log(eta);
+
+// terza fase : elaborare i dati
+// Definire sconto 20% per i minorenni
+if (eta < 18) {
+  let price_minorenni = price_km - (price_km * 20) / 100;
+  messagge = price_km * numero_km;
+}
+// verificare sconto 40% over 65
+// else if (eta > 65) {
+// }
+
+console.log(`Il prezzo totale del viaggio è ${messagge.toFixed(2)} €`);
